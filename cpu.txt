@@ -1,1 +1,18 @@
+#!/bin/bash
 
+echo "===== SYSTEM STATUS ====="
+
+echo "CPU Load:"
+uptime
+
+echo "Memory Usage:"
+free -h
+
+echo "Disk Usage:"
+df -h
+
+echo "Network Status:"
+ip a | grep inet
+
+echo "Top Processes:"
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
